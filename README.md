@@ -2,6 +2,39 @@
 
 An AI-powered computer vision control assistant that uses Google's Gemini Pro Vision model to understand and control your computer through natural language commands and visual context.
 
+## 🎥 Demo & Screenshots
+
+### Browser Control Demo
+[Watch the demo video](https://github.com/atesbey-design/computer-vision/issues/1)
+
+*Demo video showing the AI assistant controlling the browser using natural language commands and visual feedback*
+
+### YouTube Navigation
+![YouTube Navigation](screenshots/youtube-goto.png)
+*AI navigating to YouTube using keyboard shortcuts and visual feedback*
+
+### Visual Feedback System
+![Visual Feedback](screenshots/image.png)
+*Active area highlighting with blue border showing the current focus area*
+
+### Key Features Demonstrated:
+- 🎯 Natural language command processing
+- ⌨️ Intelligent keyboard shortcut usage
+- 🔷 Visual feedback with blue border highlighting
+- 🖱️ Precise mouse control when needed
+- 📊 Real-time status updates
+
+### How It Works:
+1. **Command Input**: Type natural language commands like "Open Chrome and go to YouTube"
+2. **Visual Analysis**: AI analyzes the screen to understand the current state
+3. **Smart Execution**: 
+   - First attempts to use keyboard shortcuts
+   - Falls back to mouse control if needed
+4. **Visual Feedback**: 
+   - Blue border highlights active areas
+   - Status updates show progress
+   - Real-time command execution feedback
+
 ## 🌟 Features
 
 - 🎯 **Intelligent Computer Control**: Control your computer using natural language commands and visual understanding
