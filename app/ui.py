@@ -81,44 +81,73 @@ class UI:
             bootstyle="primary"
         )
         
-        # API Key input
-        api_frame = ttk.Frame(self.settings_frame)
-        api_frame.pack(fill="x", pady=5)
+        # Gemini API Key input
+        gemini_frame = ttk.Frame(self.settings_frame)
+        gemini_frame.pack(fill="x", pady=5)
         
         ttk.Label(
-            api_frame,
+            gemini_frame,
             text="Gemini API Key:",
             bootstyle="primary"
         ).pack(side="left", padx=5)
         
-        self.api_key_var = tk.StringVar(value=self.settings.get_dict().get('gemini_api_key', ''))
-        self.api_key_entry = ttk.Entry(
-            api_frame,
-            textvariable=self.api_key_var,
+        self.gemini_api_key_var = tk.StringVar(value=self.settings.get_dict().get('gemini_api_key', ''))
+        self.gemini_api_key_entry = ttk.Entry(
+            gemini_frame,
+            textvariable=self.gemini_api_key_var,
             show="•",
             bootstyle="primary"
         )
-        self.api_key_entry.pack(side="left", fill="x", expand=True, padx=5)
+        self.gemini_api_key_entry.pack(side="left", fill="x", expand=True, padx=5)
         
-        # Show/Hide API key button
-        self.show_api_key = ttk.Button(
-            api_frame,
+        # Show/Hide Gemini API key button
+        self.show_gemini_api_key = ttk.Button(
+            gemini_frame,
             text="👁️",
-            command=self.toggle_api_key_visibility,
+            command=lambda: self.toggle_api_key_visibility(self.gemini_api_key_entry, self.show_gemini_api_key),
             width=3,
             bootstyle="secondary-outline"
         )
-        self.show_api_key.pack(side="left", padx=5)
+        self.show_gemini_api_key.pack(side="left", padx=5)
+
+        # Groq API Key input
+        groq_frame = ttk.Frame(self.settings_frame)
+        groq_frame.pack(fill="x", pady=5)
+        
+        ttk.Label(
+            groq_frame,
+            text="Groq API Key:",
+            bootstyle="primary"
+        ).pack(side="left", padx=5)
+        
+        self.groq_api_key_var = tk.StringVar(value=self.settings.get_dict().get('groq_api_key', ''))
+        self.groq_api_key_entry = ttk.Entry(
+            groq_frame,
+            textvariable=self.groq_api_key_var,
+            show="•",
+            bootstyle="primary"
+        )
+        self.groq_api_key_entry.pack(side="left", fill="x", expand=True, padx=5)
+        
+        # Show/Hide Groq API key button
+        self.show_groq_api_key = ttk.Button(
+            groq_frame,
+            text="👁️",
+            command=lambda: self.toggle_api_key_visibility(self.groq_api_key_entry, self.show_groq_api_key),
+            width=3,
+            bootstyle="secondary-outline"
+        )
+        self.show_groq_api_key.pack(side="left", padx=5)
         
         # Save button
         save_button = ttk.Button(
-            api_frame,
+            self.settings_frame,
             text="Save",
             command=self.save_settings,
             bootstyle="success-outline",
             width=8
         )
-        save_button.pack(side="left", padx=5)
+        save_button.pack(side="right", padx=5, pady=5)
         
         # Hide settings frame initially
         self.settings_visible = False
@@ -161,6 +190,7 @@ class UI:
             "gemini",
             "gemini",
             "ollama-llama3.2-vision",
+            "groq",
             bootstyle="primary-outline"
         )
         model_menu.pack(side="left", padx=5)
@@ -231,19 +261,22 @@ class UI:
             self.settings_frame.grid(row=3, column=0, sticky="nsew", pady=(10, 0))
             self.settings_visible = True
 
-    def toggle_api_key_visibility(self):
+    def toggle_api_key_visibility(self, entry_widget, button_widget):
         """Toggle API key visibility"""
-        if self.api_key_entry.cget('show') == '•':
-            self.api_key_entry.configure(show='')
-            self.show_api_key.configure(text='🔒')
+        if entry_widget.cget('show') == '•':
+            entry_widget.configure(show='')
+            button_widget.configure(text='🔒')
         else:
-            self.api_key_entry.configure(show='•')
-            self.show_api_key.configure(text='👁️')
+            entry_widget.configure(show='•')
+            button_widget.configure(text='👁️')
 
     def save_settings(self):
         """Save settings to file"""
-        api_key = self.api_key_var.get()
-        self.settings.save_settings_to_file({'gemini_api_key': api_key})
+        settings = {
+            'gemini_api_key': self.gemini_api_key_var.get(),
+            'groq_api_key': self.groq_api_key_var.get()
+        }
+        self.settings.save_settings_to_file(settings)
         Messagebox.show_info(
             "Settings saved successfully!",
             "Success",

@@ -1,6 +1,6 @@
 # Computer Vision 🤖
 
-An AI-powered computer vision control assistant that uses Google's Gemini Pro Vision model to understand and control your computer through natural language commands and visual context.
+An AI-powered computer vision control assistant that uses multiple AI models (Google's Gemini Pro Vision, Groq's LLaMA, and Ollama) to understand and control your computer through natural language commands and visual context.
 
 ## 🎥 Demo & Screenshots
 
@@ -23,14 +23,16 @@ An AI-powered computer vision control assistant that uses Google's Gemini Pro Vi
 - 🔷 Visual feedback with blue border highlighting
 - 🖱️ Precise mouse control when needed
 - 📊 Real-time status updates
+- 🔄 Multiple AI model support (Gemini, Groq, Ollama)
 
 ### How It Works:
 1. **Command Input**: Type natural language commands like "Open Chrome and go to YouTube"
-2. **Visual Analysis**: AI analyzes the screen to understand the current state
-3. **Smart Execution**: 
+2. **Model Selection**: Choose between Gemini, Groq, or Ollama models
+3. **Visual Analysis**: AI analyzes the screen to understand the current state
+4. **Smart Execution**: 
    - First attempts to use keyboard shortcuts
    - Falls back to mouse control if needed
-4. **Visual Feedback**: 
+5. **Visual Feedback**: 
    - Blue border highlights active areas
    - Status updates show progress
    - Real-time command execution feedback
@@ -39,6 +41,10 @@ An AI-powered computer vision control assistant that uses Google's Gemini Pro Vi
 
 - 🎯 **Intelligent Computer Control**: Control your computer using natural language commands and visual understanding
 - 🖼️ **Visual Context Understanding**: Uses computer vision and screenshots to understand the current state of your computer
+- 🤖 **Multiple AI Models**:
+  - Google Gemini Pro Vision
+  - Groq LLaMA Vision
+  - Ollama Local Models
 - ⌨️ **Smart Input Prioritization**: 
   - Prioritizes keyboard shortcuts for efficiency
   - Falls back to mouse control when necessary
@@ -57,7 +63,10 @@ An AI-powered computer vision control assistant that uses Google's Gemini Pro Vi
 
 - Python 3.8 or higher
 - MacOS (currently only supports MacOS)
-- Google Gemini API key
+- API Keys:
+  - Google Gemini API key (for Gemini model)
+  - Groq API key (for Groq model)
+  - Ollama running locally (for Ollama model)
 
 ### Installation
 
@@ -78,9 +87,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Set up your Gemini API key:
-   - Get an API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - The app will prompt you to enter the key on first run
+4. Set up your API keys:
+   - Get a Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Get a Groq API key from [Groq Console](https://console.groq.com)
+   - The app will prompt you to enter the keys in settings
 
 ### Usage
 
@@ -93,7 +103,16 @@ python -m app.app
    - The app will request accessibility permissions
    - This is required for keyboard and mouse control
 
-3. Use natural language commands like:
+3. Configure API keys:
+   - Click the ⚙️ Settings button
+   - Enter your Gemini and Groq API keys
+   - Click Save
+
+4. Select your preferred AI model:
+   - Choose between Gemini, Groq, or Ollama
+   - Each model has its own strengths
+
+5. Use natural language commands like:
    - "Open Chrome and go to google.com"
    - "Click the search button"
    - "Type 'hello world' in the text field"
@@ -106,6 +125,7 @@ computer-vision/
 ├── app/
 │   ├── models/
 │   │   ├── gemini.py      # Gemini model integration
+│   │   ├── groq.py        # Groq model integration
 │   │   └── ollama.py      # Ollama model integration
 │   ├── utils/
 │   │   ├── screen.py      # Screen capture and highlighting
@@ -121,7 +141,10 @@ computer-vision/
 
 ### Key Components
 
-- **Gemini Model**: Analyzes screenshots and generates commands
+- **Multiple AI Models**: 
+  - Gemini: Google's vision model
+  - Groq: High-performance LLaMA model
+  - Ollama: Local model support
 - **Interpreter**: Executes commands using PyAutoGUI
 - **Screen Manager**: Handles screen capture and visual feedback
 - **Settings Manager**: Manages configuration and API keys
@@ -165,6 +188,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🙏 Acknowledgments
 
 - Google's Gemini Pro Vision model
+- Groq's LLaMA Vision model
+- Ollama for local model support
 - PyAutoGUI for computer control
 - The open-source community
 
