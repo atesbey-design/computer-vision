@@ -44,5 +44,4 @@ Thumbs.db
 *.log
 .env
 computer-vision/
-temp/
-screenshots/ 
+temp/ 

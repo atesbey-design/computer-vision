@@ -5,16 +5,18 @@ An AI-powered computer vision control assistant that uses multiple AI models (Go
 ## 🎥 Demo & Screenshots
 
 ### Browser Control Demo
-[Watch the demo video](https://github.com/atesbey-design/computer-vision/issues/1)
+<img src="screenshots/browser-demo.gif" alt="Browser Control Demo" width="800"/>
 
 *Demo video showing the AI assistant controlling the browser using natural language commands and visual feedback*
 
 ### YouTube Navigation
-![YouTube Navigation](screenshots/youtube-goto.png)
+<img src="screenshots/youtube-goto.png" alt="YouTube Navigation" width="800"/>
+
 *AI navigating to YouTube using keyboard shortcuts and visual feedback*
 
 ### Visual Feedback System
-![Visual Feedback](screenshots/image.png)
+<img src="screenshots/image.png" alt="Visual Feedback" width="800"/>
+
 *Active area highlighting with blue border showing the current focus area*
 
 ### Key Features Demonstrated:
