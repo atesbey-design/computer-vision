@@ -26,18 +26,31 @@ An AI-powered computer vision control assistant that uses multiple AI models (Go
 - 🖱️ Precise mouse control when needed
 - 📊 Real-time status updates
 - 🔄 Multiple AI model support (Gemini, Groq, Ollama)
+- 🧠 Enhanced task planning and analysis
+- 📝 Detailed result interpretation
 
 ### How It Works:
 1. **Command Input**: Type natural language commands like "Open Chrome and go to YouTube"
-2. **Model Selection**: Choose between Gemini, Groq, or Ollama models
-3. **Visual Analysis**: AI analyzes the screen to understand the current state
-4. **Smart Execution**: 
+2. **Task Planning**:
+   - Breaks down complex tasks into steps
+   - Plans visual analysis when needed
+   - Considers different scenarios
+3. **Model Selection**: Choose between Gemini, Groq, or Ollama models
+4. **Visual Analysis**: 
+   - AI analyzes the screen to understand the current state
+   - Interprets text and UI elements
+   - Provides detailed insights from search results
+5. **Smart Execution**: 
    - First attempts to use keyboard shortcuts
    - Falls back to mouse control if needed
-5. **Visual Feedback**: 
+6. **Visual Feedback**: 
    - Blue border highlights active areas
    - Status updates show progress
    - Real-time command execution feedback
+7. **Result Analysis**:
+   - Interprets search results
+   - Extracts key information
+   - Provides concise summaries
 
 ## 🌟 Features
 
@@ -47,6 +60,14 @@ An AI-powered computer vision control assistant that uses multiple AI models (Go
   - Google Gemini Pro Vision
   - Groq LLaMA Vision
   - Ollama Local Models
+- 🧠 **Advanced Task Planning**:
+  - Complex task breakdown
+  - Visual analysis integration
+  - Scenario consideration
+- 📝 **Result Analysis**:
+  - Search result interpretation
+  - Data extraction and summarization
+  - Contextual understanding
 - ⌨️ **Smart Input Prioritization**: 
   - Prioritizes keyboard shortcuts for efficiency
   - Falls back to mouse control when necessary
